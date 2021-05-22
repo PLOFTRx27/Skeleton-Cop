@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> How to play Skeleton Cop </title>
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open();
+
+//Background Music
+var playM = new Audio('Music/csadwnfsdgbcwnvj.mp3');
+var toggle = true;
+var musicOn = false;
+sjs.keyDown(SPACE_KEY, function(){
+if(toggle == true){
+if(musicOn == false){
+playM.play();
+musicOn = true;
+} else {
+playM.pause();
+musicOn = false;
+}
+toggle = false;
+setTimeout(function(){
+toggle = true;
+},2000);
+} //end if toggle statement
+}); //end keyDown function
+
+var game_text = new sjs.Text("Click on design level or level one and make your level! Then click on play, and play your level. At the end  of the course, where you design your level, you will see a flag and a platform. Place a flag and platform there. Use the arrow keys to control your character, get the powerup to shoot bones. Use the down key to use the shoot ability after you get the powerup. Use the up key to jump. Press the space bar on any page to hear music, even this one! Enjoy!",16,"#ff0");
+game_text.centerH().offset(0, 30);
+
+var startBtn = new sjs.Button("Try It!", function(){
+window.location = "level1.html";
+});
+
+startBtn.center();
+
+var startBtn = new sjs.Button("Go Back Home", function(){
+window.location = "Index.html";
+});
+
+startBtn.centerH();
+
+var info_text = new sjs.Text("Created By Gage Grommesh",20,"Red");
+
+info_text.bottom().centerH();
+
+} //end start
+</script>
+</head>
+<body onload="start()">
+<h1> How to play Skeleton Cop </h1>
+
+<div id="target" style="margin:auto;background:black;"></div>
+</body>
+</html>
